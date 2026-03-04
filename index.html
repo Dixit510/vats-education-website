@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vats Education | Smart Learning Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+body{background:#f1f5ff;color:#333;scroll-behavior:smooth}
+
+header{
+background:#0f172a;
+color:white;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000
+}
+
+nav a{color:white;margin-left:22px;text-decoration:none;font-size:14px}
+nav a:hover{opacity:.7}
+
+.hero{
+min-height:80vh;
+background:linear-gradient(120deg,#2563eb,#06b6d4);
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px
+}
+
+.hero h2{font-size:48px;margin-bottom:20px}
+.hero p{max-width:600px}
+
+.demo-cta{
+background:white;
+padding:50px 20px;
+display:flex;
+justify-content:center;
+}
+
+.demo-cta a{
+background:#2563eb;
+color:white;
+padding:18px 42px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+font-size:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+transition:.3s
+}
+
+.demo-cta a:hover{transform:scale(1.07)}
+
+.section{padding:80px 8%}
+.section-title{text-align:center;margin-bottom:50px;font-size:32px}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px
+}
+
+.feature-card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+text-align:center;
+transition:.3s
+}
+
+.feature-card:hover{transform:translateY(-6px)}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:30px;
+text-align:center
+}
+
+.stat{
+background:white;
+padding:35px;
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,.08)
+}
+
+.stat h3{font-size:34px;color:#2563eb}
+
+.courses{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px
+}
+
+.course{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 20px rgba(0,0,0,.1)
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+height:180px;
+object-fit:cover
+}
+
+.reviews{max-width:900px;margin:auto;display:grid;gap:20px}
+
+.review{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.08)
+}
+
+.form-box{
+max-width:500px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,.1)
+}
+
+.form-box input,.form-box select{
+width:100%;padding:12px;margin-bottom:15px;border-radius:6px;border:1px solid #ddd
+}
+
+.submit-btn{
+width:100%;padding:14px;border:none;background:#2563eb;color:white;border-radius:30px;font-size:15px;cursor:pointer
+}
+
+.map{margin-top:40px;display:flex;justify-content:center}
+
+iframe{width:100%;max-width:900px;height:420px;border:none;border-radius:12px}
+
+.faq{max-width:800px;margin:auto}
+
+.faq-item{
+background:white;
+padding:18px;
+border-radius:8px;
+margin-bottom:12px;
+cursor:pointer
+}
+
+.faq-item p{display:none;margin-top:8px;font-size:14px}
+
+footer{
+background:#020617;
+color:white;
+padding:40px 8%;
+margin-top:60px
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px
+}
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+box-shadow:0 6px 20px rgba(0,0,0,.3)
+}
+
+.top-btn{
+position:fixed;
+bottom:25px;
+left:25px;
+background:#2563eb;
+color:white;
+padding:10px 14px;
+border-radius:6px;
+cursor:pointer;
+font-size:14px
+}
+
+.popup{
+position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);display:none;justify-content:center;align-items:center
+}
+
+.popup-box{background:white;padding:40px;border-radius:10px;text-align:center}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Vats Education</h2>
+<nav>
+<a href="#courses">Courses</a>
+<a href="#gallery">Gallery</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Smart Learning for Future Toppers</h2>
+<p>Offline & Online tuition classes for Class 1–12 with expert teachers and concept based learning.</p>
+</section>
+
+<section class="demo-cta">
+<a href="#contact">Book Free Demo</a>
+</section>
+
+<section class="section">
+<h2 class="section-title">Why Choose Us</h2>
+<div class="features">
+<div class="feature-card"><h3>Experienced Teachers</h3><p>Highly qualified mentors focused on concept clarity.</p></div>
+<div class="feature-card"><h3>Small Batch Size</h3><p>Better attention for every student.</p></div>
+<div class="feature-card"><h3>Weekly Tests</h3><p>Performance tracking and improvement.</p></div>
+<div class="feature-card"><h3>Doubt Sessions</h3><p>Special doubt solving classes.</p></div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Our Achievements</h2>
+<div class="stats">
+<div class="stat"><h3>500+</h3><p>Students</p></div>
+<div class="stat"><h3>50+</h3><p>Toppers</p></div>
+<div class="stat"><h3>10+</h3><p>Years Experience</p></div>
+<div class="stat"><h3>95%</h3><p>Success Rate</p></div>
+</div>
+</section>
+
+<section class="section" id="courses">
+<h2 class="section-title">Our Courses</h2>
+<div class="courses">
+<div class="course"><h3>Primary Classes</h3><p>Strong academic foundation for class 1–5 students.</p></div>
+<div class="course"><h3>Middle School</h3><p>Maths, Science and concept development.</p></div>
+<div class="course"><h3>Board Preparation</h3><p>Focused preparation for class 10 & 12 boards.</p></div>
+</div>
+</section>
+
+<section class="section" id="gallery">
+<h2 class="section-title">Classroom Gallery</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
+<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
+<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+</div>
+</section>
+
+<section class="section" id="reviews">
+<h2 class="section-title">Student Reviews</h2>
+<div class="reviews">
+<div class="review">⭐⭐⭐⭐⭐ Excellent teaching method and friendly environment.</div>
+<div class="review">⭐⭐⭐⭐⭐ Best tuition classes in Greater Noida.</div>
+<div class="review">⭐⭐⭐⭐⭐ Concepts are explained very clearly.</div>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="faq">
+<div class="faq-item" onclick="toggleFaq(this)">Do you provide demo classes?<p>Yes we provide a free demo class before enrollment.</p></div>
+<div class="faq-item" onclick="toggleFaq(this)">What subjects are covered?<p>All subjects from class 1 to 12 including maths and science.</p></div>
+<div class="faq-item" onclick="toggleFaq(this)">Is online class available?<p>Yes online and offline both options available.</p></div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<h2 class="section-title">Book Free Demo</h2>
+<div class="form-box">
+<form onsubmit="sendForm(event)">
+<input type="text" placeholder="Student Name" required>
+<input type="tel" placeholder="Phone Number" required>
+<select required>
+<option>Select Class</option>
+<option>Class 1-5</option>
+<option>Class 6-8</option>
+<option>Class 9-10</option>
+<option>Class 11-12</option>
+</select>
+<button class="submit-btn">Submit Enquiry</button>
+</form>
+</div>
+
+<div class="map">
+<iframe src="https://www.google.com/maps?q=Knowledge%20Park%203%20Greater%20Noida&output=embed"></iframe>
+</div>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h3>Vats Education</h3>
+<p>Quality tuition classes for class 1-12.</p>
+</div>
+<div>
+<h4>Contact</h4>
+<p>📍 Knowledge Park III, Greater Noida</p>
+<p>📞 +91 9430298459</p>
+</div>
+<div>
+<h4>Quick Links</h4>
+<p>Courses</p>
+<p>Demo Class</p>
+<p>Reviews</p>
+</div>
+</div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919430298459">💬</a>
+<div class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">Top</div>
+
+<div class="popup" id="popup">
+<div class="popup-box">
+<h2>Thank You</h2>
+<p>Your enquiry has been submitted.</p>
+<button onclick="closePopup()">Close</button>
+</div>
+</div>
+
+<script>
+
+function sendForm(e){
+e.preventDefault();
+document.getElementById('popup').style.display='flex'
+}
+
+function closePopup(){
+document.getElementById('popup').style.display='none'
+}
+
+function toggleFaq(el){
+let p=el.querySelector('p')
+p.style.display=p.style.display==='block'?'none':'block'
+}
+
+</script>
+
+</body>
+</html>
